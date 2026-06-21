@@ -12,35 +12,36 @@ const char PAGE_DASHBOARD[] PROGMEM = R"rawliteral(
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>House of Ancient Secrets — Dashboard</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/samarkan" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#0a0f14;--bg2:#111820;--bg3:#1a2230;
-  --gold:#d4af37;--gold-dim:#a6882a;
-  --burgundy:#800020;--burgundy-glow:#a0003a;
+  --bg:#110a06;--bg2:#1e1209;--bg3:#2d1b0e;
+  --gold:#d4a030;--gold-dim:#b08020;
+  --burgundy:#6b2e14;--burgundy-glow:#a04520;
   --green:#10b981;--green-dim:#0d9668;
-  --white:#ffffff;--muted:#a8a29e;--muted2:#6b6560;
-  --card-bg:rgba(26,34,48,0.85);
-  --border:rgba(212,175,55,0.2);
+  --white:#fff5e6;--muted:#b8a490;--muted2:#7a6854;
+  --card-bg:rgba(45,27,14,0.85);
+  --border:rgba(212,160,48,0.25);
 }
 body{
-  font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);
+  font-family:'Samarkan','Inter',serif;background:var(--bg);color:var(--white);
   min-height:100vh;overflow-x:hidden;
-  background-image:radial-gradient(ellipse at 20% 50%,rgba(128,0,32,0.08) 0%,transparent 50%),
-                   radial-gradient(ellipse at 80% 20%,rgba(212,175,55,0.05) 0%,transparent 50%);
+  background-image:radial-gradient(ellipse at 20% 50%,rgba(180,100,30,0.1) 0%,transparent 50%),
+                   radial-gradient(ellipse at 80% 20%,rgba(212,160,48,0.08) 0%,transparent 50%);
 }
 /* ── Header ── */
 .header{
   display:flex;justify-content:space-between;align-items:center;
   padding:20px 30px;border-bottom:1px solid var(--border);
-  background:rgba(10,15,20,0.9);backdrop-filter:blur(10px);
+  background:rgba(17,10,6,0.92);backdrop-filter:blur(10px);
   position:sticky;top:0;z-index:100;
 }
 .logo{display:flex;align-items:center;gap:14px;}
 .logo-icon{font-size:28px;}
 .logo h1{
-  font-family:'Cinzel',serif;font-size:20px;font-weight:700;
+  font-family:'Samarkan',serif;font-size:20px;font-weight:700;
   color:var(--gold);letter-spacing:1.5px;
 }
 .logo .subtitle{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
@@ -52,7 +53,7 @@ body{
   border:1px solid var(--border);transition:all .3s;
   display:flex;align-items:center;gap:5px;
 }
-.nav-link:hover{color:var(--gold);border-color:var(--gold-dim);background:rgba(212,175,55,0.06);}
+.nav-link:hover{color:var(--gold);border-color:var(--gold-dim);background:rgba(212,160,48,0.08);}
 .conn-status{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
 .conn-dot{width:8px;height:8px;border-radius:50%;background:#555;transition:background .3s;}
 .conn-dot.online{background:var(--green);box-shadow:0 0 8px var(--green);}
@@ -72,14 +73,14 @@ body{
   background:rgba(16,185,129,0.05);}
 .state-banner.quiz{color:var(--gold);border-color:rgba(212,175,55,0.3);
   background:rgba(212,175,55,0.05);animation:pulse 2s infinite;}
-.state-banner.over{color:var(--burgundy-glow);border-color:rgba(160,0,58,0.3);
-  background:rgba(128,0,32,0.08);}
+.state-banner.over{color:var(--burgundy-glow);border-color:rgba(160,70,32,0.3);
+  background:rgba(107,46,20,0.08);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.7;}}
 
 /* ── Timer ── */
 .timer-section{text-align:center;margin:20px 0 28px;}
 .timer{
-  font-family:'Cinzel',serif;font-size:64px;font-weight:900;
+  font-family:'Samarkan',serif;font-size:64px;font-weight:900;
   color:var(--gold);letter-spacing:4px;
   text-shadow:0 0 30px rgba(212,175,55,0.3);
 }
@@ -104,7 +105,7 @@ body{
 }
 .room-card.hit::before{opacity:1;}
 .room-num{
-  font-family:'Cinzel',serif;font-size:11px;color:var(--muted2);
+  font-family:'Samarkan',serif;font-size:11px;color:var(--muted2);
   letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;
 }
 .room-icon{font-size:32px;margin:8px 0;}
@@ -123,7 +124,7 @@ body{
 }
 .score-label{font-size:12px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
 .score-value{
-  font-family:'Cinzel',serif;font-size:52px;font-weight:900;
+  font-family:'Samarkan',serif;font-size:52px;font-weight:900;
   color:var(--white);margin:6px 0;
   transition:color .3s;
 }
@@ -136,7 +137,7 @@ body{
   background:var(--card-bg);border:1px solid rgba(212,175,55,0.3);border-radius:14px;
 }
 .quiz-section.active{display:block;animation:fadeIn .5s;}
-.quiz-title{font-family:'Cinzel',serif;color:var(--gold);font-size:16px;margin-bottom:12px;}
+.quiz-title{font-family:'Samarkan',serif;color:var(--gold);font-size:16px;margin-bottom:12px;}
 .quiz-question{font-size:15px;color:var(--white);margin-bottom:14px;line-height:1.5;}
 .quiz-options{display:flex;flex-direction:column;gap:8px;}
 .quiz-opt{
@@ -176,7 +177,7 @@ body{
 .controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
 .btn{
   padding:12px 28px;border:none;border-radius:10px;
-  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  font-family:'Samarkan','Inter',serif;font-size:14px;font-weight:600;
   cursor:pointer;letter-spacing:1px;transition:all .3s;
   display:flex;align-items:center;gap:8px;
 }
@@ -184,7 +185,7 @@ body{
 .btn-start{background:var(--green);color:#fff;}
 .btn-start:hover{background:#0d9668;box-shadow:0 0 20px rgba(16,185,129,0.3);}
 .btn-end{background:var(--burgundy);color:#fff;}
-.btn-end:hover{background:var(--burgundy-glow);box-shadow:0 0 20px rgba(128,0,32,0.3);}
+.btn-end:hover{background:var(--burgundy-glow);box-shadow:0 0 20px rgba(107,46,20,0.3);}
 .btn-reset{background:var(--bg3);color:var(--muted);border:1px solid var(--border);}
 .btn-reset:hover{color:var(--white);border-color:var(--gold-dim);}
 .btn:disabled{opacity:0.4;cursor:not-allowed;transform:none!important;}
@@ -237,31 +238,26 @@ body{
   <div class="rooms" id="roomGrid">
     <div class="room-card" id="room0">
       <div class="room-num">Room 1</div>
-      <div class="room-icon">🛕</div>
       <div class="room-name">Dakshineswar Kali Temple</div>
       <div class="room-status">🔒</div>
     </div>
     <div class="room-card" id="room1">
       <div class="room-num">Room 2</div>
-      <div class="room-icon">🙏</div>
       <div class="room-name">Swami Vivekananda</div>
       <div class="room-status">🔒</div>
     </div>
     <div class="room-card" id="room2">
       <div class="room-num">Room 3</div>
-      <div class="room-icon">🙏</div>
       <div class="room-name">Ramakrishna Paramahamsa</div>
       <div class="room-status">🔒</div>
     </div>
     <div class="room-card" id="room3">
       <div class="room-num">Room 4</div>
-      <div class="room-icon">🙏</div>
       <div class="room-name">Maa Sharada Devi</div>
       <div class="room-status">🔒</div>
     </div>
     <div class="room-card" id="room4">
       <div class="room-num">Room 5</div>
-      <div class="room-icon">🛕</div>
       <div class="room-name">Belur Math</div>
       <div class="room-status">🔒</div>
     </div>
